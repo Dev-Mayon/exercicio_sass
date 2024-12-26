@@ -14,8 +14,8 @@
 
 @function escurecerCor($cor, $percentual: 10%) {
     @return darken($cor, $percentual);
-  }
-  
+}
+
 body {
     background-color: variaveis.$cordeFundo;
 }
@@ -47,22 +47,21 @@ header {
 
 .menu {
     display: flex;
-}
+    
+    li {
+        font-weight: bold;
+        margin-left: 24px;
 
-.menu li {
-    font-weight: bold;
-    margin-left: 24px;
-}
+        a {
+            color: variaveis.$corLinksMenuBotoes;
+            text-decoration: none;
 
-.menu li a {
-    color: variaveis.$corLinksMenuBotoes;
-    text-decoration: none;
-
-    &:hover {
-        color: escurecerCor(variaveis.$corLinksMenuBotoes, 20%);
+            &:hover {
+                color: escurecerCor(variaveis.$corLinksMenuBotoes, 20%);
+            }
+        }
     }
 }
-
 
 section {
     padding: 3.5em 0;
@@ -75,21 +74,22 @@ section {
     column-gap: 1%;
     row-gap: 4%;
     width: 100%;
-}
 
+    .product-item {
+        img {
+            width: 100%;
+            border-radius: 16px;
+        }
 
-.product-item img {
-    width: 100%;
-    border-radius: 16px;
-}
+        .product-button {
+            @include elementoBotao();
+            font-weight: bold;
+            cursor: pointer;
 
-.product-button {
-    @include elementoBotao();
-    font-weight: bold;
-    cursor: pointer;
-
-    &:hover {
-        background-color: escurecerCor(variaveis.$corBotaoHover, 15%);
+            &:hover {
+                background-color: escurecerCor(variaveis.$corBotaoHover, 15%);
+            }
+        }
     }
 }
 
@@ -113,5 +113,6 @@ section {
         margin-bottom: 2em;
     }
 }
+
 
 
